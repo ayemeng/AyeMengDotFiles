@@ -51,7 +51,7 @@ alias x="exit"
 #---------------------------------------------------------------------
 # Prompt
 #---------------------------------------------------------------------
-export PROMPT="%B% %F{green}%m%f  %F{magenta}%~%f
+export PROMPT="%B% %F{green}%m%f  %F{magenta}%~%f%b
 %# "
 export RPROMPT="%F{blue}%@%f"
 
