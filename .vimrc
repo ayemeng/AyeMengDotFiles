@@ -111,3 +111,6 @@ inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 
+" Remap <F2> to NERDTreeToggle in normal mode
+noremap <F2> :NERDTreeToggle<cr>
+
