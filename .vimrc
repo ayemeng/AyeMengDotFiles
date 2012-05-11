@@ -111,3 +111,7 @@ vnoremap <F1> <ESC>
 " Remap <F2> to NERDTreeToggle in normal mode
 noremap <F2> :execute 'NERDTreeToggle'.getcwd()<CR>
 
+" Enables auto cd
+set autochdir
+
+colorscheme synic
