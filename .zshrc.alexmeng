@@ -5,11 +5,7 @@ export ANT_OPTS=-Dhappytrails.platform.override=RHEL5
 
 # Set custom aliases
 alias cr='post-review -o --target-groups=klondike'
-alias e='mvim'
-alias l='ls -l'
 alias po='p4 opened'
 alias sd='ssh ubuntu'
-alias ws='pushd /Volumes/Unix/workspace'
-alias x='exit'
 alias cl='p4 changelists -u alexmeng -s pending -c alexmeng-70cd606e6c04.ant.amazon.com-IDQSoDABuild-mainline'
 alias ht='ant -Dhappytrails.root=/Volumes/Unix/workspace/ht'
