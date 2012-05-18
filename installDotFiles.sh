@@ -16,6 +16,8 @@ pluginsGIT[0]=https://github.com/scrooloose/nerdcommenter.git
 pluginsGIT[1]=https://github.com/scrooloose/nerdtree.git
 # supertab (see https://github.com/ervandew/supertab)
 pluginsGIT[2]=https://github.com/ervandew/supertab.git
+# wombat256 (see https://github.com/shannonmoeller/wombat256)
+pluginsGIT[3]=https://github.com/vim-scripts/wombat256.vim.git
 
 # Install oh-my-zsh (see https://github.com/robbyrussell/oh-my-zsh)
 rm -rf ~/.oh-my-zsh
@@ -37,6 +39,7 @@ done
 
 # Install VIM plugins from github.com
 pushd ~/.vim/bundle
+rm -rf *
 for plugin in ${pluginsGIT[@]} 
 do
 	git clone $plugin
