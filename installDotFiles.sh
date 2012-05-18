@@ -9,6 +9,14 @@ pluginsVIM[0]=http://www.vim.org/scripts/download_script.php\?src_id\=14208
 pluginsVIM[1]=http://www.vim.org/scripts/download_script.php?src_id=12179 
 # taglist (see http://vim.sourceforge.net/scripts/script.php?script_id=273)
 pluginsVIM[2]=http://vim.sourceforge.net/scripts/download_script.php?src_id=7701
+# Perfoce SCM Integration (see http://www.vim.org/scripts/download_script.php?src_id=6139)
+pluginsVIM[3]=http://www.vim.org/scripts/download_script.php?src_id=6139
+# javacomplete (see http://www.vim.org/scripts/script.php?script_id=1785)
+pluginsVIM[5]=http://www.vim.org/scripts/download_script.php?src_id=14914
+# vcscommand (see http://www.vim.org/scripts/script.php?script_id=90)
+pluginsVIM[5]=http://www.vim.org/scripts/download_script.php?src_id=17031
+# genutils (see http://www.vim.org/scripts/script.php?script_id=197)
+pluginsVIM[4]=http://www.vim.org/scripts/download_script.php?src_id=11399
 
 # NERDcommenter (see https://github.com/scrooloose/nerdcommenter)
 pluginsGIT[0]=https://github.com/scrooloose/nerdcommenter.git
@@ -28,15 +36,6 @@ mkdir -p ~/.vim/autoload ~/.vim/bundle; \
 curl -so ~/.vim/autoload/pathogen.vim \
     https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
 
-# Install VIM plugins from vim.org
-for plugin in ${pluginsVIM[@]} 
-do
-	TMP='tmp.zip'
-	curl -o $TMP $plugin
-	unzip -f $TMP -d ~/.vim/bundle
-	rm -f $TMP
-done
-
 # Install VIM plugins from github.com
 pushd ~/.vim/bundle
 rm -rf *
@@ -45,6 +44,18 @@ do
 	git clone $plugin
 done
 popd
+
+# Install VIM plugins from vim.org
+for plugin in ${pluginsVIM[@]} 
+do
+	FILE=`curl -sI $plugin | grep -o "filename=.*$" | tr -d '\r' | awk 'BEGIN{FS="="} { print $2; }'`
+	FOLDER=`echo $FILE | awk 'BEGIN{FS="."} { print $1; }'`
+	curl -so $FILE $plugin
+	unzip -qu $FILE -d ~/.vim/bundle/$FOLDER
+	echo "Installed $FILE"
+	rm -f $FILE
+done
+
 
 # Copy over zshrc config files
 ln -fs `pwd`/.zshrc ~/.zshrc
