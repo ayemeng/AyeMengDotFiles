@@ -19,6 +19,17 @@ HISTFILE="$HOME/.history"
 SAVEHIST=$HISTSIZE
 unsetopt ALL_EXPORT
 
+if [ "`uname -s`" = "Darwin" ]
+then
+	export GVIM='mvim'
+elif [ "`uname -s`" = "Linux" ]
+then
+	export GVIM='gvim'
+else
+	export GVIM='vim'
+fi
+export EDITOR='vim'
+
 #---------------------------------------------------------------------
 # Enable options
 #---------------------------------------------------------------------

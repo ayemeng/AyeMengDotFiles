@@ -11,6 +11,7 @@ plugins[1]=http://www.vim.org/scripts/download_script.php?src_id=12179
 plugins[2]=http://www.vim.org/scripts/download_script.php?src_id=17123
 
 # Install oh-my-zsh (see https://github.com/robbyrussell/oh-my-zsh)
+rm -rf ~/.oh-my-zsh
 curl -sL https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
 
 # Install pathogen (see https://github.com/tpope/vim-pathogen)
@@ -30,6 +31,7 @@ done
 # Copy over zshrc config files
 cp .zshrc ~/
 cp .zshrc.ayemeng ~/
+cp .zshrc.alexmeng ~/
 
 # Copy over vimrc
 cp .vimrc ~/
