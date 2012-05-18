@@ -114,4 +114,4 @@ noremap <F2> :execute 'NERDTreeToggle'.getcwd()<CR>
 " Enables auto cd
 set autochdir
 
-colorscheme synic
+colorscheme wombat
