@@ -1,58 +1,39 @@
-######################################################################
-#		      AyeMeng's custom .zshrc 
-######################################################################
+# Path to your oh-my-zsh configuration.
+ZSH=$HOME/.oh-my-zsh
 
-#---------------------------------------------------------------------
-# Functions
-#---------------------------------------------------------------------
-autoload -U compinit
-compinit
-autoload -U promptinit
-promptinit
+# Set name of the theme to load.
+# Look in ~/.oh-my-zsh/themes/
+# Optionally, if you set this to "random", it'll load a random theme each
+# time that oh-my-zsh is loaded.
+ZSH_THEME="robbyrussell"
 
-#---------------------------------------------------------------------
-# Environment
-#---------------------------------------------------------------------
-setopt ALL_EXPORT
-HISTSIZE=2000
-HISTFILE="$HOME/.history"
-SAVEHIST=$HISTSIZE
-unsetopt ALL_EXPORT
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
 
-#---------------------------------------------------------------------
-# Enable options
-#---------------------------------------------------------------------
-# Correct typos
-setopt CORRECTALL
-# Append to history
-setopt INC_APPEND_HISTORY 
-# Ignore commands staring with a " "
-setopt HIST_IGNORE_SPACE
-# Auto 'cd'
-setopt AUTOCD
-# Share history between sessions
-setopt SHARE_HISTORY
-# Improved globbing 
-setopt EXTENDEDGLOB
+# Set to this to use case-sensitive completion
+# CASE_SENSITIVE="true"
 
-#---------------------------------------------------------------------
-# Styles
-#---------------------------------------------------------------------
-zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
-zstyle ':completion:*:warnings' format '%BSorry, no matches for: %d%b'
+# Comment this out to disable weekly auto-update checks
+# DISABLE_AUTO_UPDATE="true"
 
-#---------------------------------------------------------------------
-# Alias
-#---------------------------------------------------------------------
-alias c="clear"
-alias l='ls -lGhF'
-alias ll='ls -al'
-alias x="exit"
-#---------------------------------------------------------------------
-# Prompt
-#---------------------------------------------------------------------
-export PROMPT="%B% %F{green}%m%f  %F{magenta}%~%f%b
-%# "
-export RPROMPT="%F{blue}%@%f"
+# Uncomment following line if you want to disable colors in ls
+# DISABLE_LS_COLORS="true"
 
+# Uncomment following line if you want to disable autosetting terminal title.
+# DISABLE_AUTO_TITLE="true"
 
+# Uncomment following line if you want red dots to be displayed while waiting for completion
+COMPLETION_WAITING_DOTS="true"
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+plugins=(git macports)
+
+source $ZSH/oh-my-zsh.sh
+source ~/.zshrc.ayemeng
+source ~/.zshrc.alexmeng
+
+# Customize to your needs...
+export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/git/bin:/opt/local/bin
