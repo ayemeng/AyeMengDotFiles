@@ -7,11 +7,15 @@
 pluginsVIM[0]=http://www.vim.org/scripts/download_script.php\?src_id\=14208
 # color sample pack (see http://www.vim.org/scripts/script.php?script_id=625)
 pluginsVIM[1]=http://www.vim.org/scripts/download_script.php?src_id=12179 
+# taglist (see http://vim.sourceforge.net/scripts/script.php?script_id=273)
+pluginsVIM[2]=http://vim.sourceforge.net/scripts/download_script.php?src_id=7701
 
 # NERDcommenter (see https://github.com/scrooloose/nerdcommenter)
 pluginsGIT[0]=https://github.com/scrooloose/nerdcommenter.git
 # NERDTree (see https://github.com/scrooloose/nerdtree)
 pluginsGIT[1]=https://github.com/scrooloose/nerdtree.git
+# supertab (see https://github.com/ervandew/supertab)
+pluginsGIT[2]=https://github.com/ervandew/supertab.git
 
 # Install oh-my-zsh (see https://github.com/robbyrussell/oh-my-zsh)
 rm -rf ~/.oh-my-zsh
