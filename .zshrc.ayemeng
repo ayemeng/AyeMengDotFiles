@@ -14,39 +14,34 @@ promptinit
 # Environment
 #---------------------------------------------------------------------
 setopt ALL_EXPORT
-HISTSIZE=2000
+EDITOR='vim'
 HISTFILE="$HOME/.history"
+HISTSIZE=2000
+RPROMPT="%F{blue}%@%f"
 SAVEHIST=$HISTSIZE
-unsetopt ALL_EXPORT
-
 if [ "`uname -s`" = "Darwin" ]
 then
-	export GVIM='mvim'
+	GVIM='mvim'
 elif [ "`uname -s`" = "Linux" ]
 then
-	export GVIM='gvim'
+	GVIM='gvim'
 else
-	export GVIM='vim'
+	GVIM='vim'
 fi
-export EDITOR='vim'
+unsetopt ALL_EXPORT
 
 #---------------------------------------------------------------------
-# Enable options
+# Enable options (see man zshoptions)
 #---------------------------------------------------------------------
-# Correct typos
-setopt CORRECTALL
-# Append to history
-setopt INC_APPEND_HISTORY 
-# Ignore commands staring with a " "
-setopt HIST_IGNORE_SPACE
-# Auto 'cd'
 setopt AUTOCD
-# Share history between sessions
-setopt SHARE_HISTORY
-# Improved globbing 
+setopt AUTO_PUSHD
+setopt CORRECTALL
 setopt EXTENDEDGLOB
+setopt HIST_IGNORE_SPACE
+setopt INC_APPEND_HISTORY 
+setopt SHARE_HISTORY
 
-#---------------------------------------------------------------------
+#--------------------------------------------------------------------
 # Styles
 #---------------------------------------------------------------------
 zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
@@ -55,15 +50,13 @@ zstyle ':completion:*:warnings' format '%BSorry, no matches for: %d%b'
 #---------------------------------------------------------------------
 # Alias
 #---------------------------------------------------------------------
-alias c="clear"
+alias c='clear'
+alias ga='git add'
+alias gc='git commit'
+alias gf='git pull'
+alias gp='git push'
 alias l='ls -lGhF'
 alias ll='ls -al'
 alias r='vim -M'
-alias x="exit"
+alias x='exit'
 
-#---------------------------------------------------------------------
-# Prompt
-#---------------------------------------------------------------------
-export PROMPT="%B% %F{green}%m%f  %F{magenta}%~%f%b
-%# "
-export RPROMPT="%F{blue}%@%f"
