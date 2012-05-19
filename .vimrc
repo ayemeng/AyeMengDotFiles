@@ -86,9 +86,6 @@ set textwidth=79
 " Sequence of letters which describes how automatic formatting is to be done.
 set fo=qrn1
 
-" List of screen columns that are highlighted with ColorColumn
-set colorcolumn=85
-
 " Force non usage of arrow keys
 nnoremap <up> <nop>
 nnoremap <down> <nop>
@@ -111,7 +108,18 @@ vnoremap <F1> <ESC>
 " Remap <F2> to NERDTreeToggle in normal mode
 noremap <F2> :execute 'NERDTreeToggle'.getcwd()<CR>
 
-" Enables auto cd
-set autochdir
-
 colorscheme wombat
+
+" Set the working directory to the nearest ancestor that contains the marker
+" directory/file
+let g:ctrlp_working_path_mode = 2
+
+" Exclude files/directories from ctrlp
+let g:ctrlp_custom_ignore = {
+	\ 'dir':  '\.git$\|\.hg$\|\.svn$|\eclipse-bin$\|\build$\',
+	\ 'file': '\.exe$\|\.so$\|\.dll$|\.class$|\.project$|\.classpath$\',
+	\ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
+	\ }
+
+" Set the root marker for eclipse's metadata folder
+let g:ctrlp_root_markers = ['.metadata/']

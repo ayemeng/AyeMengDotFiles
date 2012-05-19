@@ -17,6 +17,9 @@ pluginsVIM[5]=http://www.vim.org/scripts/download_script.php?src_id=14914
 pluginsVIM[5]=http://www.vim.org/scripts/download_script.php?src_id=17031
 # genutils (see http://www.vim.org/scripts/script.php?script_id=197)
 pluginsVIM[4]=http://www.vim.org/scripts/download_script.php?src_id=11399
+# Ctrlp (see http://www.vim.org/scripts/script.php?script_id=3736)
+pluginsVIM[5]=http://www.vim.org/scripts/download_script.php?src_id=17830
+
 
 # NERDcommenter (see https://github.com/scrooloose/nerdcommenter)
 pluginsGIT[0]=https://github.com/scrooloose/nerdcommenter.git
