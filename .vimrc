@@ -123,3 +123,7 @@ let g:ctrlp_custom_ignore = {
 
 " Set the root marker for eclipse's metadata folder
 let g:ctrlp_root_markers = ['.metadata/']
+
+" Remap esc to 'jk' (http://learnvimscriptthehardway.stevelosh.com/chapters/10.html)
+inoremap jk <esc>
+
