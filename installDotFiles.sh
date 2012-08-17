@@ -1,4 +1,4 @@
-#! /bin/sh
+#! /bin/zsh
 ##
 # The script installs the dotfiles for the user and vim plugins
 ## 
