@@ -16,17 +16,18 @@ plugins_git=()
 plugins_git+="https://github.com/scrooloose/nerdcommenter.git"
 # NERDTree (see https://github.com/scrooloose/nerdtree)
 plugins_git+="https://github.com/scrooloose/nerdtree.git"
-# supertab (see https://github.com/ervandew/supertab)
-plugins_git+="https://github.com/ervandew/supertab.git"
 # wombat256 (see https://github.com/shannonmoeller/wombat256)
 plugins_git+="https://github.com/vim-scripts/wombat256.vim.git"
 
 # Install oh-my-zsh (see https://github.com/robbyrussell/oh-my-zsh)
-rm -rf ~/.oh-my-zsh
+if [[ -e ~/.oh-my-zsh ]]
+then
+	rm -rf ~/.oh-my-zsh
+fi
 curl -sL https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
 
 # Install pathogen (see https://github.com/tpope/vim-pathogen)
-mkdir -p ~/.vim/autoload ~/.vim/bundle; \
+mkdir -p ~/.vim/autoload;  \
 curl -so ~/.vim/autoload/pathogen.vim \
     https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
 
