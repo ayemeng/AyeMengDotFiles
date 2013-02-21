@@ -9,8 +9,6 @@ plugins_vim=()
 plugins_vim+="http://www.vim.org/scripts/download_script.php?src_id=19481"
 # color sample pack (see http://www.vim.org/scripts/script.php?script_id=625)
 plugins_vim+="http://www.vim.org/scripts/download_script.php?src_id=18915"
-# taglist (see http://vim.sourceforge.net/scripts/script.php?script_id=273)
-plugins_vim+="http://vim.sourceforge.net/scripts/download_script.php?src_id=7701"
 # javacomplete (see http://www.vim.org/scripts/script.php?script_id=1785)
 plugins_vim+="http://www.vim.org/scripts/download_script.php?src_id=14914"
 # vcscommand (see http://www.vim.org/scripts/script.php?script_id=90)
