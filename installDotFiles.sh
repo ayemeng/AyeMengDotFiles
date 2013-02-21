@@ -3,32 +3,33 @@
 # The script installs the dotfiles for the user and vim plugins
 ## 
 
+# List of vim plugins to install from vim.org
+plugins_vim=()
 # bufexplorer (see http://www.vim.org/scripts/script.php?script_id=42)
-pluginsVIM[0]=http://www.vim.org/scripts/download_script.php\?src_id\=14208
+plugins_vim+="http://www.vim.org/scripts/download_script.php?src_id=19481"
 # color sample pack (see http://www.vim.org/scripts/script.php?script_id=625)
-pluginsVIM[1]=http://www.vim.org/scripts/download_script.php?src_id=12179 
+plugins_vim+="http://www.vim.org/scripts/download_script.php?src_id=18915"
 # taglist (see http://vim.sourceforge.net/scripts/script.php?script_id=273)
-pluginsVIM[2]=http://vim.sourceforge.net/scripts/download_script.php?src_id=7701
-# Perfoce SCM Integration (see http://www.vim.org/scripts/download_script.php?src_id=6139)
-pluginsVIM[3]=http://www.vim.org/scripts/download_script.php?src_id=6139
+plugins_vim+="http://vim.sourceforge.net/scripts/download_script.php?src_id=7701"
 # javacomplete (see http://www.vim.org/scripts/script.php?script_id=1785)
-pluginsVIM[5]=http://www.vim.org/scripts/download_script.php?src_id=14914
+plugins_vim+="http://www.vim.org/scripts/download_script.php?src_id=14914"
 # vcscommand (see http://www.vim.org/scripts/script.php?script_id=90)
-pluginsVIM[5]=http://www.vim.org/scripts/download_script.php?src_id=17031
+plugins_vim+="http://www.vim.org/scripts/download_script.php?src_id=17031"
 # genutils (see http://www.vim.org/scripts/script.php?script_id=197)
-pluginsVIM[4]=http://www.vim.org/scripts/download_script.php?src_id=11399
+plugins_vim+="http://www.vim.org/scripts/download_script.php?src_id=11399"
 # Ctrlp (see http://www.vim.org/scripts/script.php?script_id=3736)
-pluginsVIM[5]=http://www.vim.org/scripts/download_script.php?src_id=17830
+plugins_vim+="http://www.vim.org/scripts/download_script.php?src_id=17830"
 
-
+# List of vim plugins to install from GIT
+plugins_git=()
 # NERDcommenter (see https://github.com/scrooloose/nerdcommenter)
-pluginsGIT[0]=https://github.com/scrooloose/nerdcommenter.git
+plugins_git+="https://github.com/scrooloose/nerdcommenter.git"
 # NERDTree (see https://github.com/scrooloose/nerdtree)
-pluginsGIT[1]=https://github.com/scrooloose/nerdtree.git
+plugins_git+="https://github.com/scrooloose/nerdtree.git"
 # supertab (see https://github.com/ervandew/supertab)
-pluginsGIT[2]=https://github.com/ervandew/supertab.git
+plugins_git+="https://github.com/ervandew/supertab.git"
 # wombat256 (see https://github.com/shannonmoeller/wombat256)
-pluginsGIT[3]=https://github.com/vim-scripts/wombat256.vim.git
+plugins_git+="https://github.com/vim-scripts/wombat256.vim.git"
 
 # Install oh-my-zsh (see https://github.com/robbyrussell/oh-my-zsh)
 rm -rf ~/.oh-my-zsh
@@ -39,17 +40,24 @@ mkdir -p ~/.vim/autoload ~/.vim/bundle; \
 curl -so ~/.vim/autoload/pathogen.vim \
     https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
 
+# Remove old vim bundles
+if [[ -d ~/.vim/bundle ]]
+then
+	echo "Removing old vim bundle directory"
+	rm -rf ~/.vim/bundle
+	mkdir -p ~/.vim/bundle
+fi
+
 # Install VIM plugins from github.com
 pushd ~/.vim/bundle
-rm -rf *
-for plugin in ${pluginsGIT[@]} 
+for plugin in ${plugins_git[@]} 
 do
 	git clone $plugin
 done
 popd
 
 # Install VIM plugins from vim.org
-for plugin in ${pluginsVIM[@]} 
+for plugin in ${plugins_vim[@]} 
 do
 	FILE=`curl -sI $plugin | grep -o "filename=.*$" | tr -d '\r' | awk 'BEGIN{FS="="} { print $2; }'`
 	FOLDER=`echo $FILE | awk 'BEGIN{FS="."} { print $1; }'`
