@@ -7,14 +7,6 @@
 plugins_vim=()
 # bufexplorer (see http://www.vim.org/scripts/script.php?script_id=42)
 plugins_vim+="http://www.vim.org/scripts/download_script.php?src_id=19481"
-# color sample pack (see http://www.vim.org/scripts/script.php?script_id=625)
-plugins_vim+="http://www.vim.org/scripts/download_script.php?src_id=18915"
-# javacomplete (see http://www.vim.org/scripts/script.php?script_id=1785)
-plugins_vim+="http://www.vim.org/scripts/download_script.php?src_id=14914"
-# vcscommand (see http://www.vim.org/scripts/script.php?script_id=90)
-plugins_vim+="http://www.vim.org/scripts/download_script.php?src_id=17031"
-# genutils (see http://www.vim.org/scripts/script.php?script_id=197)
-plugins_vim+="http://www.vim.org/scripts/download_script.php?src_id=11399"
 # Ctrlp (see http://www.vim.org/scripts/script.php?script_id=3736)
 plugins_vim+="http://www.vim.org/scripts/download_script.php?src_id=17830"
 
