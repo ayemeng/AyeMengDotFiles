@@ -130,3 +130,5 @@ inoremap jk <esc>
 " Enable Windows like shortcuts (ctrl-c, copy; ctrl-v, paste)
 source $VIMRUNTIME/mswin.vim
 behave mswin
+" Unmap ctrl-z from undo to nothing
+unmap <C-z>
