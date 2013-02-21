@@ -108,7 +108,7 @@ vnoremap <F1> <ESC>
 " Remap <F2> to NERDTreeToggle in normal mode
 noremap <F2> :execute 'NERDTreeToggle'.getcwd()<CR>
 
-colorscheme wombat
+colorscheme wombat256mod
 
 " Set the working directory to the nearest ancestor that contains the marker
 " directory/file
