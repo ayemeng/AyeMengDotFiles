@@ -1,7 +1,6 @@
 #! /bin/zsh
 ##
 # The script installs the dotfiles for the user and vim plugins
-# Test diff
 ## 
 
 # List of vim plugins to install from vim.org
