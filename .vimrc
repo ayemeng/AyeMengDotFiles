@@ -58,9 +58,6 @@ set cul
 " Show the line number relative to the line with the cursor in front of	each line.
 set rnu
 
-" Change <Leader> to "\" 
-let mapleader = "\"
-
 " The case of normal letters is ignored.
 set ignorecase
 
