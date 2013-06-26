@@ -1,0 +1,12 @@
+export LS_HOME=$HOME/workspace
+
+# appauth dependencies
+export KEYCZAR_CRYPT_DIR=$HOME/.appauth/crypt-dev
+export KEYRING_KEYCZAR_ENCRYPTED_LOCATION=$KEYCZAR_CRYPT_DIR
+source $KEYCZAR_CRYPT_DIR/aws_keyring_backend_auth.sh
+
+
+# python dependencies – developer convenience, not for apps
+export PYTHONPATH=$LS_HOME/learnsprout-root/python:$LS_HOME/learnsprout-prod/python
+[ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
+
