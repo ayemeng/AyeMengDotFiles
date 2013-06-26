@@ -77,8 +77,8 @@ vnoremap <tab> %
 " This option changes how text is displayed.
 set wrap
 
-" Maximum width of text that is being inserted.
-set textwidth=79
+" 120 since that should take up half of a 24in screen
+set textwidth=120
 
 " Sequence of letters which describes how automatic formatting is to be done.
 set fo=qrn1
