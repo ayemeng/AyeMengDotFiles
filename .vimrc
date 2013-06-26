@@ -99,12 +99,12 @@ colorscheme wombat256mod
 
 " Set the working directory to the nearest ancestor that contains the marker
 " directory/file
-let g:ctrlp_working_path_mode = 2
+let g:ctrlp_working_path_mode = 0
 
 " Exclude files/directories from ctrlp
 let g:ctrlp_custom_ignore = {
 	\ 'dir':  '\.git$\|\.hg$\|\.svn$|\eclipse-bin$\|\build$\',
-	\ 'file': '\.exe$\|\.so$\|\.dll$|\.class$|\.project$|\.classpath$\',
+	\ 'file': '\.exe$\|\.so$\|\.dll$|\.class$|\.project$|\.classpath$\\.pyc$\',
 	\ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
 	\ }
 
