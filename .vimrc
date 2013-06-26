@@ -83,16 +83,6 @@ set textwidth=120
 " Sequence of letters which describes how automatic formatting is to be done.
 set fo=qrn1
 
-" Force non usage of arrow keys
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
-
 " Remap "j" and "k" with "gj" and "gk"
 nnoremap j gj
 nnoremap k gk
