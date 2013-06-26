@@ -116,3 +116,9 @@ inoremap jk <esc>
 
 " Unmap ctrl-z from undo to nothing
 unmap <C-z>
+
+" Set tab width to be 4 spaces
+set tabstop=4
+
+" Convert tabs into spaces
+set expandtab
