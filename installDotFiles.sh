@@ -63,6 +63,7 @@ done
 ln -fs `pwd`/.zshrc ~/.zshrc
 ln -fs `pwd`/.zshrc.ayemeng ~/.zshrc.ayemeng
 ln -fs `pwd`/.zshrc.alexmeng ~/.zshrc.alexmeng
+ln -fs `pwd`/.zshrc.learnsprout ~/.zshrc.learnsprout
 
 # Copy over vimrc
 ln -fs `pwd`/.vimrc ~/.vimrc
