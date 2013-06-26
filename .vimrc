@@ -122,3 +122,6 @@ set tabstop=4
 
 " Convert tabs into spaces
 set expandtab
+
+" Use 256 colors in vim (useful for terminal)
+set t_Co=256
