@@ -114,10 +114,6 @@ let g:ctrlp_root_markers = ['.metadata/']
 " Remap esc to 'jk' (http://learnvimscriptthehardway.stevelosh.com/chapters/10.html)
 inoremap jk <esc>
 
-unmap <C-z>
-
-" Set tab width to be 4 spaces
-set tabstop=4
 " set tab width size of 2 spaces and use spaces over tabs
 set tabstop=2 
 set expandtab 
