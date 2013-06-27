@@ -103,10 +103,10 @@ let g:ctrlp_working_path_mode = 0
 
 " Exclude files/directories from ctrlp
 let g:ctrlp_custom_ignore = {
-	\ 'dir':  '\.git$\|\.hg$\|\.svn$|\eclipse-bin$\|\build$\',
-	\ 'file': '\.exe$\|\.so$\|\.dll$|\.class$|\.project$|\.classpath$\\.pyc$\',
-	\ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
-	\ }
+  \ 'dir':  '\.git$\|\.hg$\|\.svn$|\eclipse-bin$\|\build$\|\Library$\',
+  \ 'file': '\v\.(exe|so|dll|pyc|DS_Store|project|class|plist|pdf|jpg|swp|png|gif|db|zip|CFUserTextEncoding|xlsx|doc|docx|vmdk|ppt|tar|gz|jpeg|dmg)$',
+  \ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
+\ }
 
 " Set the root marker for eclipse's metadata folder
 let g:ctrlp_root_markers = ['.metadata/']
