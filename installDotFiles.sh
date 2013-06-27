@@ -18,6 +18,8 @@ plugins_git+="https://github.com/scrooloose/nerdcommenter.git"
 plugins_git+="https://github.com/scrooloose/nerdtree.git"
 # wombat256 (see https://github.com/shannonmoeller/wombat256)
 plugins_git+="https://github.com/vim-scripts/wombat256.vim.git"
+# fugitive (see https://github.com/tpope/vim-fugitive)
+plugins_git+="https://github.com/tpope/vim-fugitive.git"
 
 # Install oh-my-zsh (see https://github.com/robbyrussell/oh-my-zsh)
 if [[ -e ~/.oh-my-zsh ]]
