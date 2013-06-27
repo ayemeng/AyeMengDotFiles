@@ -55,13 +55,13 @@ set vb
 " Highlight the screen line of the cursor with CursorLine
 set cul
 
-" Show the line number relative to the line with the cursor in front of	each line.
+" Show the line number relative to the line with the cursor in front of each line.
 set rnu
 
 " The case of normal letters is ignored.
 set ignorecase
 
-" Override the 'ignorecase' option if the search pattern contains upper	case characters.
+" Override the 'ignorecase' option if the search pattern contains upper case characters.
 set scs
 
 " This means that all matches in a line are substituted instead of one.
@@ -114,14 +114,15 @@ let g:ctrlp_root_markers = ['.metadata/']
 " Remap esc to 'jk' (http://learnvimscriptthehardway.stevelosh.com/chapters/10.html)
 inoremap jk <esc>
 
-" Unmap ctrl-z from undo to nothing
 unmap <C-z>
 
 " Set tab width to be 4 spaces
 set tabstop=4
-
-" Convert tabs into spaces
-set expandtab
+" set tab width size of 2 spaces and use spaces over tabs
+set tabstop=2 
+set expandtab 
+set shiftwidth=2 
+set softtabstop=2
 
 " Use 256 colors in vim (useful for terminal)
 set t_Co=256
