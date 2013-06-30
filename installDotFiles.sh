@@ -20,6 +20,8 @@ plugins_git+="https://github.com/scrooloose/nerdtree.git"
 plugins_git+="https://github.com/vim-scripts/wombat256.vim.git"
 # fugitive (see https://github.com/tpope/vim-fugitive)
 plugins_git+="https://github.com/tpope/vim-fugitive.git"
+# flake8 (see https://github.com/nvie/vim-flake8)
+plugins_git+="https://github.com/nvie/vim-flake8"
 
 # Install oh-my-zsh (see https://github.com/robbyrussell/oh-my-zsh)
 if [[ -e ~/.oh-my-zsh ]]

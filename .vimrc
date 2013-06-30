@@ -122,3 +122,7 @@ set softtabstop=2
 
 " Use 256 colors in vim (useful for terminal)
 set t_Co=256
+
+" Run flake8 when a python file is saved
+autocmd BufWritePost *.py call Flake8()
+let g:flake8_cmd="/opt/boxen/homebrew/share/python/flake8"
