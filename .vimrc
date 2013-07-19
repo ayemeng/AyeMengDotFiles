@@ -1,7 +1,23 @@
-call pathogen#infect()
-
 " Disable compatiblity with VI
 set nocompatible
+
+set rtp+=/Library/Python/2.7/site-packages/powerline/bindings/vim
+set rtp+=~/.vim/bundle/vundle/
+
+call vundle#rc()
+Bundle 'klen/python-mode'
+Bundle 'tpope/vim-fugitive'
+Bundle 'scrooloose/nerdtree'
+Bundle 'nvie/vim-flake8'
+Bundle 'Lokaltog/powerline'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'davidhalter/jedi-vim'
+Bundle 'ervandew/supertab'
+Bundle 'kien/ctrlp.vim'
+Bundle 'corntrace/bufexplorer'
+
+" Use 256 colors in vim (useful for terminal)
+set t_Co=256
 
 " Excluses gui VIM toolbar
 set guioptions-=T
@@ -95,7 +111,12 @@ vnoremap <F1> <ESC>
 " Remap <Leader>e to NERDTreeToggle in normal mode
 noremap <Leader>e :execute 'NERDTreeToggle'<CR>
 
-colorscheme wombat256mod
+set background=light
+try
+    colorscheme solarized
+catch /^Vim\%((\a\+)\)\=:E185/
+    " deal with it
+endtry
 
 " Set the working directory to the nearest ancestor that contains the marker
 " directory/file
@@ -115,14 +136,27 @@ let g:ctrlp_root_markers = ['.metadata/']
 inoremap jk <esc>
 
 " set tab width size of 2 spaces and use spaces over tabs
-set tabstop=2 
-set expandtab 
-set shiftwidth=2 
+set tabstop=2
+set expandtab
+set shiftwidth=2
 set softtabstop=2
 
-" Use 256 colors in vim (useful for terminal)
-set t_Co=256
+
+let g:flake8_ignore="E121,E111,F403,E501"
+let g:flake8_max_line_length=119
+let g:flake8_builtins="_,apply"
+
 
 " Run flake8 when a python file is saved
 autocmd BufWritePost *.py call Flake8()
+autocmd BufWritePost $MYVIMRC source $MYVIMRC
 let g:flake8_cmd="/opt/boxen/homebrew/share/python/flake8"
+nnoremap <space> za
+vnoremap <space> zf
+
+set guifont=Source\ Code\ Pro\ for\ Powerline:h14
+" Always display the statusline in all windows
+set laststatus=2 " Always display the statusline in all windows
+" Hide the default mode text (e.g. -- INSERT -- below the statusline)
+set noshowmode
+let g:pymode_rope = 0
