@@ -26,6 +26,7 @@ git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 ln -fs `pwd`/.zshrc ~/.zshrc
 ln -fs `pwd`/.zshrc.ayemeng ~/.zshrc.ayemeng
 ln -fs `pwd`/.zshrc.learnsprout ~/.zshrc.learnsprout
+ln -fs `pwd`/.tmux.conf ~/.tmux.conf
 
 # Copy over vimrc
 ln -fs `pwd`/.vimrc ~/.vimrc
