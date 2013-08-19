@@ -65,4 +65,12 @@ alias ws='pushd ~/Workspace'
 alias x='exit'
 
 . /Library/Python/2.7/site-packages/powerline/bindings/zsh/powerline.zsh
+export PYTHONSTARTUP=/Users/ayemeng/.pythonrc.py
 
+#---------------------------------------------------------------------
+# Keymap overrides
+#---------------------------------------------------------------------
+bindkey -v
+bindkey -M viins ‘jj’ vi-cmd-mode
+bindkey -M viins '^r' history-incremental-search-backward
+bindkey -M vicmd '^r' history-incremental-search-backward
