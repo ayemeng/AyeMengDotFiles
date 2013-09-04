@@ -70,6 +70,9 @@ set gd
 " 120 since that should take up half of a 24in screen
 set textwidth=120
 
+" Don't show mode since it will be shown by powerline
+set noshowmode
+
 set background=light
 try
     colorscheme solarized
@@ -127,3 +130,9 @@ let g:pymode_lint = ''
 " ag options override
 let g:agprg = "/opt/boxen/homebrew/bin/ag --column"
 let g:ctrlp_working_path_mode = 0
+
+" vim-coffee-script override
+let coffee_compiler = '/opt/boxen/nodenv/shims/coffee'
+let coffee_linter = '/opt/boxen/nodenv/shims/coffeelint'
+
+
