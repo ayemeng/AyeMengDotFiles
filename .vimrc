@@ -1,5 +1,7 @@
-" Disable compatiblity with VI
+" disable vi compatiblity (think iMproved)
 set nocompatible
+" required by vundle
+filetype off
 
 " Set runtime path for vim
 set rtp+=/Library/Python/2.7/site-packages/powerline/bindings/vim
@@ -7,21 +9,24 @@ set rtp+=~/.vim/bundle/vundle/
 
 " Install vim plugins via vundle
 call vundle#rc()
+Bundle 'gmarik/vundle'
+Bundle 'klen/python-mode'
 Bundle 'Lokaltog/powerline'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'corntrace/bufexplorer'
-Bundle 'davidhalter/jedi-vim'
 Bundle 'ervandew/supertab'
 Bundle 'jmcantrell/vim-virtualenv'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
-Bundle 'klen/python-mode'
 Bundle 'mattn/emmet-vim'
 Bundle 'msanders/snipmate.vim'
 Bundle 'rking/ag.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
+
+" required by vundle, enables filetype detection, plugin, and indent
+filetype plugin indent on
 
 " set default working directory to workspace
 cd ~/workspace 
@@ -40,9 +45,6 @@ set ic hls incsearch
 " Syntax highlighting enables Vim to show parts of the text in another font or color.
 syntax on 
 
-" To enable file type detection, plugin, and indent.
-filetype on
-filetype plugin indent on
 
 " Shows the line number, column, and relative position in the file
 set ruler
@@ -97,8 +99,8 @@ nmap <silent> <C-n> :noh<CR>
 nnoremap ; :
 
 " set tab width size of 2 spaces and use spaces over tabs
-set tabstop=2
 set expandtab
+set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 
@@ -121,11 +123,6 @@ let g:ctrlp_custom_ignore = {
 \ }
 
 " pymode options override
-let g:pymode_rope = 0
-let g:pymode_virtualenv = 1
-let g:pymode_lint_onfly = 1
-let g:pymode_lint_ignore = "E501"
-let g:pymode_lint = ''
 
 " ag options override
 let g:agprg = "/opt/boxen/homebrew/bin/ag --column"
@@ -135,4 +132,14 @@ let g:ctrlp_working_path_mode = 0
 let coffee_compiler = '/opt/boxen/nodenv/shims/coffee'
 let coffee_linter = '/opt/boxen/nodenv/shims/coffeelint'
 
+" NERDTree override
+let NERDTreeIgnore = ['\.pyc$']
+
+"  python-mode override
+let g:pymode_lint_checker = "pyflakes"
+let g:pymode_lint_mccabe_complexity = 10
+let g:pymode_lint_write = 0
+
+
+autocmd Filetype python setlocal expandtab tabstop=2 shiftwidth=2
 
