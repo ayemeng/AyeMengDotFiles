@@ -1,12 +1,16 @@
-export LS_HOME=$HOME/workspace
-
-# appauth dependencies
-export KEYCZAR_CRYPT_DIR=$HOME/.appauth/crypt-dev
-export KEYRING_KEYCZAR_ENCRYPTED_LOCATION=$KEYCZAR_CRYPT_DIR
-source $KEYCZAR_CRYPT_DIR/aws_keyring_backend_auth.sh
-
-
-# python dependencies – developer convenience, not for apps
-export PYTHONPATH=$LS_HOME/learnsprout-root/python:$LS_HOME/learnsprout-prod/python
 [ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
 
+export LS_HOME=$HOME/workspace
+
+# source LS shared shell utilities
+source $LS_HOME/learnsprout-prod/machines/bash_utils.sh
+
+# setup alias to repo
+for repo in $(ls -d $LS_HOME/learnsprout-*)
+do
+  # iterate through each repo and create an alias
+  # (e.g. 'api' will be aliased to pushd to learnsprout-api
+  # directory. assumes directory to be 'learnsprout-<name> format
+  alias_name=`echo $repo | xargs basename | cut -d - -f2`
+  alias $alias_name="pushd $repo"
+done
