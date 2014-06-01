@@ -1,5 +1,3 @@
-[ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
-
 export LS_HOME=$HOME/workspace
 
 # source LS shared shell utilities

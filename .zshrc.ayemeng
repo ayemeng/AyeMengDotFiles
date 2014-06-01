@@ -14,20 +14,11 @@ promptinit
 # Environment
 #---------------------------------------------------------------------
 setopt ALL_EXPORT
-EDITOR='vim'
+EDITOR='mvim'
 HISTFILE="$HOME/.history"
 HISTSIZE=2000
 RPROMPT="%F{blue}%@%f"
 SAVEHIST=$HISTSIZE
-if [ "`uname -s`" = "Darwin" ]
-then
-	GVIM='mvim'
-elif [ "`uname -s`" = "Linux" ]
-then
-	GVIM='gvim'
-else
-	GVIM='vim'
-fi
 unsetopt ALL_EXPORT
 
 #---------------------------------------------------------------------
@@ -54,15 +45,8 @@ zstyle ':completion:*:warnings' format '%BSorry, no matches for: %d%b'
 #---------------------------------------------------------------------
 alias c='clear'
 alias f='find'
-alias ga='git add'
-alias gc='git commit'
-alias gd='git diff'
-alias gf='git pull'
-alias gp='git push'
-alias gs='git status'
 alias l='ls -lGhF'
-alias ll='ls -al'
-alias r='vim -M'
+alias ll='ls -alGhF'
 alias ws='pushd ~/Workspace'
 alias x='exit'
 
