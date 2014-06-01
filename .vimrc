@@ -4,7 +4,7 @@ set nocompatible
 filetype off
 
 " Set runtime path for vim
-set rtp+=/Library/Python/2.7/site-packages/powerline/bindings/vim
+set rtp+=/Users/ayemeng/.vim/bundle/powerline/powerline/bindings/vim
 set rtp+=~/.vim/bundle/vundle/
 
 " Install vim plugins via vundle
@@ -19,17 +19,19 @@ Bundle 'jmcantrell/vim-virtualenv'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
 Bundle 'mattn/emmet-vim'
-Bundle 'msanders/snipmate.vim'
 Bundle 'rking/ag.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
-
+Bundle 'SirVer/ultisnips'
+Bundle 'scrooloose/syntastic'
+"
 " required by vundle, enables filetype detection, plugin, and indent
 filetype plugin indent on
 
 " set default working directory to workspace
 cd ~/workspace 
+
 " Sets the character encoding used inside Vim.
 set encoding=utf-8
 
@@ -44,7 +46,6 @@ set ic hls incsearch
 
 " Syntax highlighting enables Vim to show parts of the text in another font or color.
 syntax on 
-
 
 " Shows the line number, column, and relative position in the file
 set ruler
@@ -69,6 +70,7 @@ set scs
 
 " This means that all matches in a line are substituted instead of one.
 set gd
+
 " 120 since that should take up half of a 24in screen
 set textwidth=120
 
@@ -111,6 +113,11 @@ set noautochdir
 set laststatus=2 " Always display the statusline in all windows
 
 set completeopt=menuone,longest,preview
+
+" Setup code folding
+set foldmethod=indent
+set foldlevel=99
+
 " supertab options override
 let g:SuperTabDefaultCompletionType = "context"
 
@@ -118,7 +125,7 @@ let g:SuperTabDefaultCompletionType = "context"
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn|Trash)$|\v[\/](Library|Pictures|Movies|Applications)$',
-  \ 'file': '\v\.(exe|so|dll|pyc|DS_Store|project|class|plist|pdf|jpg|swp|png|gif|db|zip|CFUserTextEncoding|xlsx|doc|docx|vmdk|ppt|tar|gz|jpeg|dmg|ics|vbox)$',
+  \ 'file': '\v\.(exe|so|dll|pyc|DS_Store|project|class|plist|pdf|jpg|swp|png|gif|db|zip|CFUserTextEncoding|xlsx|doc|docx|vmdk|ppt|tar|gz|jpeg|dmg|ics|vbox|lprof)$',
   \ 'link': 'SOME_BAD_SYMBOLIC_LINKS'
 \ }
 
@@ -127,6 +134,7 @@ let g:ctrlp_custom_ignore = {
 " ag options override
 let g:agprg = "/opt/boxen/homebrew/bin/ag --column"
 let g:ctrlp_working_path_mode = 0
+let g:ctrlp_by_filename = 1
 
 " vim-coffee-script override
 let coffee_compiler = '/opt/boxen/nodenv/shims/coffee'
@@ -140,6 +148,13 @@ let g:pymode_lint_checker = "pyflakes"
 let g:pymode_lint_mccabe_complexity = 10
 let g:pymode_lint_write = 0
 
+let g:UltiSnipsUsePythonVersion = 2
+
+" key mapping overrides
+map <c-j> <c-w>j
+map <c-k> <c-w>k
+map <c-l> <c-w>l
+map <c-h> <c-w>h
 
 autocmd Filetype python setlocal expandtab tabstop=2 shiftwidth=2
-
+au FileType python set omnifunc=pythoncomplete#Complete
