@@ -9,22 +9,19 @@ set rtp+=~/.vim/bundle/vundle/
 
 " Install vim plugins via vundle
 call vundle#rc()
-Bundle 'gmarik/vundle'
-Bundle 'klen/python-mode'
 Bundle 'Lokaltog/powerline'
+Bundle 'SirVer/ultisnips'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'corntrace/bufexplorer'
 Bundle 'ervandew/supertab'
-Bundle 'jmcantrell/vim-virtualenv'
-Bundle 'kchmck/vim-coffee-script'
+Bundle 'gmarik/vundle'
 Bundle 'kien/ctrlp.vim'
-Bundle 'mattn/emmet-vim'
+Bundle 'klen/python-mode'
 Bundle 'rking/ag.vim'
 Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
-Bundle 'SirVer/ultisnips'
-Bundle 'scrooloose/syntastic'
 "
 " required by vundle, enables filetype detection, plugin, and indent
 filetype plugin indent on
