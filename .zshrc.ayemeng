@@ -50,6 +50,7 @@ alias ll='ls -alGhF'
 alias ws='pushd ~/Workspace'
 alias x='exit'
 
+
 . /opt/boxen/homebrew/Cellar/python/2.7.3-boxen2/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
 
 # loads powerline for prompt
