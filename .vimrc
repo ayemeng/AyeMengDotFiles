@@ -4,11 +4,11 @@ set nocompatible
 filetype off
 
 " Set runtime path for vim
-set rtp+=/Users/ayemeng/.vim/bundle/powerline/powerline/bindings/vim
 set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 
 " Install vim plugins via vundle
-call vundle#rc()
+call vundle#begin()
 Bundle 'Lokaltog/powerline'
 Bundle 'SirVer/ultisnips'
 Bundle 'altercation/vim-colors-solarized'
@@ -22,8 +22,9 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
-"
+
 " required by vundle, enables filetype detection, plugin, and indent
+call vundle#end()
 filetype plugin indent on
 
 " set default working directory to workspace
