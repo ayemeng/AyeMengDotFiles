@@ -40,6 +40,8 @@ setopt EXTENDEDGLOB
 setopt HIST_IGNORE_SPACE
 setopt INC_APPEND_HISTORY 
 setopt SHARE_HISTORY
+setopt typesetsilent
+
 
 #--------------------------------------------------------------------
 # Styles
@@ -64,8 +66,10 @@ alias r='vim -M'
 alias ws='pushd ~/Workspace'
 alias x='exit'
 
-. /Library/Python/2.7/site-packages/powerline/bindings/zsh/powerline.zsh
-export PYTHONSTARTUP=/Users/ayemeng/.pythonrc.py
+. /opt/boxen/homebrew/Cellar/python/2.7.3-boxen2/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
+
+# loads powerline for prompt
+[ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
 
 #---------------------------------------------------------------------
 # Keymap overrides

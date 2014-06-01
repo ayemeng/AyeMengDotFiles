@@ -3,7 +3,9 @@
 export LS_HOME=$HOME/workspace
 
 # source LS shared shell utilities
-source $LS_HOME/learnsprout-prod/machines/bash_utils.sh
+export LS_USER_PS1='not-empty'
+export SIMPLE_DB_KEYRING_DOMAIN_NAME=learnsprout-appauth
+source $LS_HOME/learnsprout-prod/developer/bash_utils.sh
 
 # setup alias to repo
 for repo in $(ls -d $LS_HOME/learnsprout-*)
@@ -14,3 +16,4 @@ do
   alias_name=`echo $repo | xargs basename | cut -d - -f2`
   alias $alias_name="pushd $repo"
 done
+source ~/.autoenv/activate.sh
