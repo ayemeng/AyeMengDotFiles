@@ -69,9 +69,6 @@ set scs
 " This means that all matches in a line are substituted instead of one.
 set gd
 
-" 120 since that should take up half of a 24in screen
-set textwidth=120
-
 " Don't show mode since it will be shown by powerline
 set noshowmode
 
@@ -103,6 +100,7 @@ set expandtab
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
+set tw=0
 
 " Set GUI font
 set guifont=Source\ Code\ Pro\ for\ Powerline:h14
