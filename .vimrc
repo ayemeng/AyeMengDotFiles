@@ -29,9 +29,6 @@ set encoding=utf-8
 " set default working directory to workspace
 cd ~/workspace 
 
-" Use 256 colors in vim (useful for terminal)
-set t_Co=256
-
 " Excluses gui VIM toolbar
 set guioptions-=T
 
