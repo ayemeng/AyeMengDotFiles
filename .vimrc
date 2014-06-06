@@ -26,9 +26,6 @@ filetype plugin indent on
 " Sets the character encoding used inside Vim.
 set encoding=utf-8
 
-" set default working directory to workspace
-cd ~/workspace 
-
 " Excluses gui VIM toolbar
 set guioptions-=T
 
@@ -120,5 +117,8 @@ let g:agprg = "/opt/boxen/homebrew/bin/ag --column"
 let g:pymode_lint_checker = "pyflakes"
 let g:pymode_lint_mccabe_complexity = 10
 let g:pymode_lint_write = 0
+
+" set default working directory to workspace
+cd ~/workspace 
 
 au FileType python set omnifunc=pythoncomplete#Complete
