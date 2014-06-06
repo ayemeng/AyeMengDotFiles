@@ -78,6 +78,10 @@ nnoremap k gk
 noremap <leader><space> :noh<cr>
 nmap <silent> <C-n> :noh<CR>
 nnoremap ; :
+map <c-j> <c-w>j
+map <c-k> <c-w>k
+map <c-l> <c-w>l
+map <c-h> <c-w>h
 
 " set tab width size of 2 spaces and use spaces over tabs
 set expandtab
@@ -97,38 +101,23 @@ set completeopt=menuone,longest,preview
 set foldmethod=indent
 set foldlevel=99
 
-" supertab options override
-let g:SuperTabDefaultCompletionType = "context"
-
-" ctrlp option override
+" ctrlp overrides
 let g:ctrlp_by_filename = 1
-let g:ctrlp_show_hidden = 1
-let g:ctrlp_working_path_mode = 0
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn|Trash)$|\v[\/](Library|Pictures|Movies|Applications)$',
   \ 'file': '\v\.(exe|so|dll|pyc|DS_Store|project|class|plist|pdf|jpg|swp|png|gif|db|zip|CFUserTextEncoding|xlsx|doc|docx|vmdk|ppt|tar|gz|jpeg|dmg|ics|vbox|lprof)$',
   \ 'link': 'SOME_BAD_SYMBOLIC_LINKS'
 \ }
+let g:ctrlp_match_window = 'bottom,order:ttb,min:5,results:5'
+let g:ctrlp_mruf_max = 10
+let g:ctrlp_working_path_mode = 0
 
-" ag options override
+" ag overrides
 let g:agprg = "/opt/boxen/homebrew/bin/ag --column"
 
-" vim-coffee-script override
-let coffee_compiler = '/opt/boxen/nodenv/shims/coffee'
-let coffee_linter = '/opt/boxen/nodenv/shims/coffeelint'
-
-" NERDTree override
-let NERDTreeIgnore = ['\.pyc$']
-
-"  python-mode override
+" python-mode overrides
 let g:pymode_lint_checker = "pyflakes"
 let g:pymode_lint_mccabe_complexity = 10
 let g:pymode_lint_write = 0
-
-" key mapping overrides
-map <c-j> <c-w>j
-map <c-k> <c-w>k
-map <c-l> <c-w>l
-map <c-h> <c-w>h
 
 au FileType python set omnifunc=pythoncomplete#Complete
