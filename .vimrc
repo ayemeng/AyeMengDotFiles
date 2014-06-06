@@ -9,7 +9,6 @@ set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 filetype off
 call vundle#begin()
 Bundle 'Lokaltog/powerline'
-Bundle 'SirVer/ultisnips'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'corntrace/bufexplorer'
 Bundle 'ervandew/supertab'
@@ -20,7 +19,6 @@ Bundle 'rking/ag.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-surround'
 
 " required by vundle, enables filetype detection, plugin, and indent
 call vundle#end()
