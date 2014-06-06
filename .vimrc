@@ -11,7 +11,6 @@ call vundle#begin()
 Bundle 'Lokaltog/powerline'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'corntrace/bufexplorer'
-Bundle 'ervandew/supertab'
 Bundle 'gmarik/vundle'
 Bundle 'kien/ctrlp.vim'
 Bundle 'klen/python-mode'
