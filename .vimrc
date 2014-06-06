@@ -45,7 +45,7 @@ set backspace=indent,eol,start
 set vb
 
 " Highlight the screen line of the cursor with CursorLine
-set cul
+set cul cuc
 
 " Show the line number relative to the line with the cursor in front of each line.
 set rnu
