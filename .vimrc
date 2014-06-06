@@ -93,6 +93,7 @@ set tw=0
 " Set GUI font
 set guifont=Source\ Code\ Pro\ for\ Powerline:h14
 set noautochdir
+
 " Always display the statusline in all windows
 set laststatus=2 " Always display the statusline in all windows
 set completeopt=menuone,longest,preview
