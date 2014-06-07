@@ -1,16 +1,16 @@
-" disable vi compatiblity (think iMproved)
 set nocompatible
 
-" Set runtime path for vim
+" append paths to runtime
 set rtp+=~/.vim/bundle/vundle/
 set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 
-" Install vim plugins via vundle
+" install plugins via vundle
 filetype off
 call vundle#begin()
 Bundle 'Lokaltog/powerline'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'corntrace/bufexplorer'
+Bundle 'ervandew/supertab'
 Bundle 'gmarik/vundle'
 Bundle 'kien/ctrlp.vim'
 Bundle 'klen/python-mode'
@@ -19,85 +19,63 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-fugitive'
 
-" required by vundle, enables filetype detection, plugin, and indent
 call vundle#end()
 filetype plugin indent on
+syntax on
 
-" Sets the character encoding used inside Vim.
+
+" vim overrides
+set ruler
+set visualbell
 set encoding=utf-8
+set relativenumber
+set background=light
+set tw=0
+set guifont=Source\ Code\ Pro\ for\ Powerline:h14
+set noautochdir
+set laststatus=2 
+set completeopt=menu,longest,preview
+set pumheight=5
+set splitbelow
 
-" Excluses gui VIM toolbar
+" excludes toolbar in gui vim
 set guioptions-=T
 
-" Ignore case in search patterns. Highlight all its matches. Enables incremental search.
+" enables ignorecase, highlight and incremental search
 set ic hls incsearch
 
-" Shows the line number, column, and relative position in the file
-set ruler
-
-" fix backspace behavior 
+" enable backspace key
 set backspace=indent,eol,start
 
-" Use visual bell instead of beeping.
-set vb
-
-" Highlight the screen line of the cursor with CursorLine
+" enable screen line of cursor
 set cul cuc
 
-" Show the line number relative to the line with the cursor in front of each line.
-set rnu
-
-" This means that all matches in a line are substituted instead of one.
-set gd
-
-" Don't show mode since it will be shown by powerline
+" enable noshow for powerline
 set noshowmode
 
-set background=light
+" attepmpt to use solarized
 try
     colorscheme solarized
 catch /^Vim\%((\a\+)\)\=:E185/
     " deal with it
 endtry
 
-" keymap overrides
+" vim keymap overrides
 inoremap jk <esc>
-nnoremap <space> za
-vnoremap <space> zf
-inoremap <F1> <ESC>
-nnoremap <F1> <ESC>
-vnoremap <F1> <ESC>
-"" Remap <Leader>e to NERDTreeToggle in normal mode
-noremap <Leader>e :execute 'NERDTreeToggle'<CR>
-noremap <Leader>s :Ag 
 nnoremap j gj
 nnoremap k gk
-noremap <leader><space> :noh<cr>
-nmap <silent> <C-n> :noh<CR>
 nnoremap ; :
 map <c-j> <c-w>j
 map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
 
-" set tab width size of 2 spaces and use spaces over tabs
-set expandtab
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
-set tw=0
-
-" Set GUI font
-set guifont=Source\ Code\ Pro\ for\ Powerline:h14
-set noautochdir
-
-" Always display the statusline in all windows
-set laststatus=2 " Always display the statusline in all windows
-set completeopt=menuone,longest,preview
-
-" Setup code folding
-set foldmethod=indent
-set foldlevel=99
+" plugin specific overrides
+nnoremap <space> za
+vnoremap <space> zf
+noremap <Leader>e :execute 'NERDTreeToggle'<CR>
+noremap <Leader>s :Ag 
+noremap <leader><space> :noh<cr>
 
 " ctrlp overrides
 let g:ctrlp_by_filename = 1
@@ -107,18 +85,27 @@ let g:ctrlp_custom_ignore = {
   \ 'link': 'SOME_BAD_SYMBOLIC_LINKS'
 \ }
 let g:ctrlp_match_window = 'bottom,order:ttb,min:5,results:5'
-let g:ctrlp_mruf_max = 10
+let g:ctrlp_mruf_max = 5
 let g:ctrlp_working_path_mode = 0
 
 " ag overrides
-let g:agprg = "/opt/boxen/homebrew/bin/ag --column"
+let g:aghighlight = 1
+let g:agprg = '/opt/boxen/homebrew/bin/ag --column'
+
+" synastic overrides
+let g:syntastic_python_checkers = ['pylint']
+let g:syntastic_python_pylint_rcfile = '~/.pylintrc'
+let g:syntastic_loc_list_height = 5
+let g:syntastic_always_populate_loc_list = 1
 
 " python-mode overrides
-let g:pymode_lint_checker = "pyflakes"
-let g:pymode_lint_mccabe_complexity = 10
-let g:pymode_lint_write = 0
+let g:pymode_lint = 0
+let g:pymode_syntax_print_as_function = 1
 
-" set default working directory to workspace
+" supertab overrides
+let g:SuperTabDefaultCompletionType = 'context'
+let g:SuperTabContextDefaultCompletionType = '<c-n>'
+let g:SuperTabClosePreviewOnPopupClose = 1
+
+" set working directory
 cd ~/workspace 
-
-au FileType python set omnifunc=pythoncomplete#Complete
