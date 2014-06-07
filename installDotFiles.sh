@@ -23,13 +23,13 @@ git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 
 
 # Copy over zshrc config files
-ln -fs `pwd`/.zshrc ~/.zshrc
-ln -fs `pwd`/.zshrc.ayemeng ~/.zshrc.ayemeng
-ln -fs `pwd`/.zshrc.learnsprout ~/.zshrc.learnsprout
-ln -fs `pwd`/.tmux.conf ~/.tmux.conf
+ln -fs `pwd`/zshrc ~/.zshrc
+ln -fs `pwd`/zshrc.ayemeng ~/.zshrc.ayemeng
+ln -fs `pwd`/zshrc.learnsprout ~/.zshrc.learnsprout
+ln -fs `pwd`/tmux.conf ~/.tmux.conf
 
 # Copy over vimrc
-ln -fs `pwd`/.vimrc ~/.vimrc
+ln -fs `pwd`/vimrc ~/.vimrc
 
 # automatically run BundleInstall for vim to install plugins
 vim +BundleInstall +qall
