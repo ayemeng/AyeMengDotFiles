@@ -90,7 +90,7 @@ let g:ctrlp_working_path_mode = 0
 
 " ag overrides
 let g:aghighlight = 1
-let g:agprg = '/opt/boxen/homebrew/bin/ag --column'
+let g:agprg = '/usr/local/bin/ag --column'
 
 " synastic overrides
 let g:syntastic_python_checkers = ['pylint']
