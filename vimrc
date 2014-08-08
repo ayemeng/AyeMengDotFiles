@@ -23,7 +23,6 @@ call vundle#end()
 filetype plugin indent on
 syntax on
 
-
 " vim overrides
 set ruler
 set visualbell
@@ -99,6 +98,7 @@ let g:syntastic_loc_list_height = 5
 let g:syntastic_always_populate_loc_list = 1
 
 " python-mode overrides
+let g:pymode_indent = 0
 let g:pymode_lint = 0
 let g:pymode_syntax_print_as_function = 1
 
