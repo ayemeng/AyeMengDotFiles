@@ -2,16 +2,15 @@ set nocompatible
 
 " append paths to runtime
 set rtp+=~/.vim/bundle/vundle/
-set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 
 " install plugins via vundle
 filetype off
 call vundle#begin()
-Bundle 'Lokaltog/powerline'
+Bundle 'gmarik/vundle'
+Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'corntrace/bufexplorer'
 Bundle 'ervandew/supertab'
-Bundle 'gmarik/vundle'
 Bundle 'kien/ctrlp.vim'
 Bundle 'klen/python-mode'
 Bundle 'rking/ag.vim'
@@ -106,6 +105,9 @@ let g:pymode_syntax_print_as_function = 1
 let g:SuperTabDefaultCompletionType = 'context'
 let g:SuperTabContextDefaultCompletionType = '<c-n>'
 let g:SuperTabClosePreviewOnPopupClose = 1
+
+" fix indentation for python files
+autocmd FileType python setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=2
 
 " set working directory
 cd ~/workspace 
