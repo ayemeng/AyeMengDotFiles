@@ -74,7 +74,8 @@ nnoremap <space> za
 vnoremap <space> zf
 noremap <Leader>e :execute 'NERDTreeToggle'<CR>
 noremap <Leader>s :Ag 
-noremap <leader><space> :noh<cr>
+noremap <Leader>r :execute 'source $MYVIMRC'<CR>
+noremap <leader><space> :noh<CR>
 
 " ctrlp overrides
 let g:ctrlp_by_filename = 1
