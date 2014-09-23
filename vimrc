@@ -6,35 +6,36 @@ set rtp+=~/.vim/bundle/vundle/
 " install plugins via vundle
 filetype off
 call vundle#begin()
-Bundle 'gmarik/vundle'
-Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'bling/vim-airline'
 Bundle 'corntrace/bufexplorer'
 Bundle 'ervandew/supertab'
+Bundle 'gmarik/vundle'
+Bundle 'jmcantrell/vim-virtualenv'
 Bundle 'kien/ctrlp.vim'
 Bundle 'klen/python-mode'
 Bundle 'rking/ag.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-fugitive'
-
 call vundle#end()
 filetype plugin indent on
 syntax on
 
 " vim overrides
-set ruler
-set visualbell
-set encoding=utf-8
-set relativenumber
 set background=light
-set tw=0
-set guifont=Source\ Code\ Pro\ for\ Powerline:h14
-set noautochdir
-set laststatus=2 
 set completeopt=menu,longest,preview
+set encoding=utf-8
+set laststatus=2 
+set noautochdir
 set pumheight=5
+set relativenumber
+set ruler
 set splitbelow
+set t_Co=256
+set termencoding=utf-8
+set tw=0
+set visualbell
 
 " excludes toolbar in gui vim
 set guioptions-=T
@@ -79,12 +80,15 @@ noremap <leader><space> :noh<cr>
 let g:ctrlp_by_filename = 1
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn|Trash)$|\v[\/](Library|Pictures|Movies|Applications)$',
-  \ 'file': '\v\.(exe|so|dll|pyc|DS_Store|project|class|plist|pdf|jpg|swp|png|gif|db|zip|CFUserTextEncoding|xlsx|doc|docx|vmdk|ppt|tar|gz|jpeg|dmg|ics|vbox|lprof)$',
+  \ 'file': '\v\.(exe|so|dll|pyc|DS_Store|project|class|plist|pdf|jpg|swp|png|gif|db|zip|CFUserTextEncoding|xlsx|doc|docx|vmdk|ppt|tar|gz|jpeg|dmg|ics|vbox|lprof|otf|swp)$',
   \ 'link': 'SOME_BAD_SYMBOLIC_LINKS'
 \ }
 let g:ctrlp_match_window = 'bottom,order:ttb,min:5,results:5'
 let g:ctrlp_mruf_max = 5
 let g:ctrlp_working_path_mode = 0
+let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_max_depth = 10
+let g:ctrlp_open_new_file = 't'
 
 " ag overrides
 let g:aghighlight = 1
@@ -108,6 +112,20 @@ let g:SuperTabClosePreviewOnPopupClose = 1
 
 " fix indentation for python files
 autocmd FileType python setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=2
+
+" vim-virtualenv overrides
+let g:virtualenv_auto_activate = 1
+
+" vim-airline overrides
+let g:airline_powerline_fonts = 1
+
+" gui overrides
+if has("gui_running")
+   let s:uname = system("uname")
+   if s:uname == "Darwin\n"
+      set guifont=Inconsolata\ for\ Powerline:h15
+   endif
+endif
 
 " set working directory
 cd ~/workspace 
