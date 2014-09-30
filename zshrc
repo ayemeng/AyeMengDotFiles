@@ -35,4 +35,5 @@ source $ZSH/oh-my-zsh.sh
 source ~/.zshrc.ayemeng
 
 # Customize to your needs...
-export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/git/bin:/opt/local/bin:/opt/boxen/homebrew/share/npm/bin:/Users/ayemeng/anaconda/bin:/opt/boxen/homebrew/bin
+export PATH=/usr/local/bin:$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/git/bin:/opt/local/bin:/opt/boxen/homebrew/share/npm/bin:/Users/ayemeng/anaconda/bin:/opt/boxen/homebrew/bin
+export PYTHONSTARTUP=~/.pythonrc

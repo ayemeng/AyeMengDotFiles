@@ -18,6 +18,7 @@ Bundle 'rking/ag.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-fugitive'
+Bundle 'majutsushi/tagbar'
 call vundle#end()
 filetype plugin indent on
 syntax on
@@ -76,6 +77,8 @@ noremap <Leader>e :execute 'NERDTreeToggle'<CR>
 noremap <Leader>s :Ag 
 noremap <Leader>r :execute 'source $MYVIMRC'<CR>
 noremap <leader><space> :noh<CR>
+nmap <Leader>t :TagbarToggle<CR>
+
 
 " ctrlp overrides
 let g:ctrlp_by_filename = 1
