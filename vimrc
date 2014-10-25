@@ -12,9 +12,9 @@ Bundle 'corntrace/bufexplorer'
 Bundle 'ervandew/supertab'
 Bundle 'gmarik/vundle'
 Bundle 'jmcantrell/vim-virtualenv'
+Bundle 'rking/ag.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'klen/python-mode'
-Bundle 'rking/ag.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-fugitive'
@@ -22,6 +22,7 @@ Bundle 'majutsushi/tagbar'
 call vundle#end()
 filetype plugin indent on
 syntax on
+
 
 " vim overrides
 set background=light
@@ -37,6 +38,10 @@ set t_Co=256
 set termencoding=utf-8
 set tw=0
 set visualbell
+set expandtab 
+set shiftwidth=2 
+set softtabstop=2 
+set tabstop=2
 
 " excludes toolbar in gui vim
 set guioptions-=T
@@ -96,7 +101,9 @@ let g:ctrlp_open_new_file = 't'
 
 " ag overrides
 let g:aghighlight = 1
-let g:agprg = '/usr/local/bin/ag --column'
+let g:agprg = 'ag --color-match --column --python' 
+let g:agformat="%f:%l:%m"
+
 
 " synastic overrides
 let g:syntastic_python_checkers = ['pylint']
@@ -131,5 +138,6 @@ if has("gui_running")
    endif
 endif
 
+" set tags=/Users/ayemeng/workspace/tags
 " set working directory
 cd ~/workspace 
