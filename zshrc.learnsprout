@@ -3,6 +3,7 @@ export LS_HOME=$HOME/workspace
 # source LS shared shell utilities
 export LS_USER_PS1='not-empty'
 export SIMPLE_DB_KEYRING_DOMAIN_NAME=learnsprout-appauth
+export PYTHONSTARTUP=~/.pythonrc
 
 # bash_utils.sh assumes to be bootstrapped from learnsprout-prod virtualenv
 source ~/.virtualenvs/learnsprout-prod/bin/activate
