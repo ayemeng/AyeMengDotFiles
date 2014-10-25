@@ -138,6 +138,5 @@ if has("gui_running")
    endif
 endif
 
-" set tags=/Users/ayemeng/workspace/tags
 " set working directory
 cd ~/workspace 
