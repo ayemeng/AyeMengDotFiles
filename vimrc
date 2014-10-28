@@ -12,13 +12,14 @@ Bundle 'corntrace/bufexplorer'
 Bundle 'ervandew/supertab'
 Bundle 'gmarik/vundle'
 Bundle 'jmcantrell/vim-virtualenv'
-Bundle 'rking/ag.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'klen/python-mode'
+Bundle 'majutsushi/tagbar'
+Bundle 'rking/ag.vim'
+Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-fugitive'
-Bundle 'majutsushi/tagbar'
 call vundle#end()
 filetype plugin indent on
 syntax on
@@ -102,7 +103,6 @@ let g:ctrlp_open_new_file = 't'
 " ag overrides
 let g:aghighlight = 1
 let g:agprg = 'ag --color-match --column --python' 
-let g:agformat="%f:%l:%m"
 
 
 " synastic overrides
@@ -126,6 +126,10 @@ autocmd FileType python setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=2
 
 " vim-virtualenv overrides
 let g:virtualenv_auto_activate = 1
+
+" tagbar overrides
+let g:tagbar_compact = 1
+let g:tagbar_show_linenumbers = 2
 
 " vim-airline overrides
 let g:airline_powerline_fonts = 1
